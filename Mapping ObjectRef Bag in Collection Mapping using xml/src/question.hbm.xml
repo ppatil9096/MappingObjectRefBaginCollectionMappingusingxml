@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 31 Dec, 2017 9:34:30 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+	<class name="com.pravin.hibernate.Question" table="collection_mapping_objectref_bag">
+		<id name="id">
+			<generator class="increment" />
+		</id>
+		<property name="qname" type="java.lang.String">
+		</property>
+		<bag name="answers" cascade="all">
+			<key column="type"></key>
+			<one-to-many class="com.pravin.hibernate.Answer" />
+		</bag>
+	</class>
+	<class name="com.pravin.hibernate.Answer" table="answer_collection_mapping_objectref_set">
+		<id name="id">
+			<generator class="increment" />
+		</id>
+		<property name="givenAnswer" type="java.lang.String">
+		</property>
+		<property name="postBy" type="java.lang.String">
+		</property>
+	</class>
+</hibernate-mapping>
